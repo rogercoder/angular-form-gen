@@ -1,4 +1,4 @@
-var fg = angular.module('fg', ['dq']);
+var fg = angular.module('fg', ['dq', 'ui.bootstrap']);
 
 /**
  * Constructor for form-gen Field types.
@@ -261,6 +261,8 @@ fg.config(function (fgConfigProvider, FgField) {
       // })
     ]
   };
+  
+  //var questionCategories = categories;
 
 
   angular.forEach(categories, function (fields, category) {
@@ -268,6 +270,8 @@ fg.config(function (fgConfigProvider, FgField) {
       fgConfigProvider.fields.add(field, category /*, templateUrl, propertiesTemplateUrl */);
     });
   });
+  
+  
 
   // - - - - - - - - - - - - - - - - - - - - - -
   // Patterns
