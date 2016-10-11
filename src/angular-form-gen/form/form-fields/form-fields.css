@@ -1,7 +1,16 @@
 
 
-
-.form .control-label, .fg-edit-palette .control-label {
+/* The first selector was originally:
+ .form .control-label
+ but this messes up other non form-gen pages,
+ so the ancestor 'fg-form' was added to the mix
+ after doing a very minor amount of analysis.
+ If it turns out that some elements in form-gen
+ are not displaying proper than
+ we may need to either change either this selector
+ or else the css class structure in the html.
+ */
+.form .fg-form .control-label, .fg-edit-palette .control-label {
   float: none;
   width: 100%;
   text-align: left;
