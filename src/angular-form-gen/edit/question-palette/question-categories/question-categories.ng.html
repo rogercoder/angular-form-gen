@@ -1,0 +1,16 @@
+questionCategories: {{questionCategories}} 
+<legend ng-click="questionPaletteCategoriesMenuOpen = !questionPaletteCategoriesMenuOpen"
+        ng-class="{ 'open': questionPaletteCategoriesMenuOpen }">Questions
+    <span class="fg-legend-extra fg-edit-palette-categories visible-xs-inline visible-md-inline visible-lg-inline">- {{ questionCategoryName || 'All field types' }}</span> <i class="caret"></i>
+    <ul class="dropdown-menu">
+        <li ng-repeat="(name, category) in questionCategories" ng-class="{ 'active': questionCategoryName === name }">
+            <a ng-click="setQuestionCategory(name, category)">
+                {{ name }} [{{questionCategory}}]
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li ng-class="{ 'active': !category }">
+            <a ng-click="setQuestionCategory(null)">All field types</a>
+        </li>
+    </ul>
+</legend>

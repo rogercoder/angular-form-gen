@@ -1,0 +1,34 @@
+<div class="fg-edit-palette">
+
+
+  <accordion>
+    <accordion-group heading="accordion 1">
+      <fieldset>
+        <div ng-repeat="template in questions" class="fg-field"
+             dq-draggable="fg-edit-canvas" dq-drag-begin="{ source: 'palette', field: template }">
+          <!-- template: {{template}} -->
+          <div class="fg-field-overlay">
+            <div class="btn-toolbar btn-toolbar-right">
+              <button class="btn btn-default btn-xs btn-primary" type="button" ng-click="schemaCtrl.addField(template)"
+                      title="Add this field.">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </div>
+          </div>
+          <div fg-field="template"
+               fg-tab-index="-1"
+               fg-no-validation-summary="true"
+               fg-edit-mode="true">
+            {{template.displayName}}
+          </div>
+        </div>
+
+      </fieldset>
+    </accordion-group>
+    <accordion-group heading="accordion 2">
+      <div>item 1b</div>
+      <div>item 2b</div>
+    </accordion-group>
+  </accordion>
+
+</div>
